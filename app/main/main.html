@@ -1,0 +1,26 @@
+<div class="col-sm-10 col-sm-offset-1">
+    <div class="row">
+	<form enctype="multipart/form-data" action="../photoup" method="POST">
+        
+		<input type="file" name="userPhoto" />
+		<input type="submit />
+	</form>
+    </div>
+    
+    <div class="row">
+        <table class="waste-section">
+        <tr > <a ng-if="incomingWastes.length > 0" ng-click="setNewWastes()">There are {{difference}} new wastes</a></tr>
+        <tr ng-repeat="waste in wastes">
+            <td>{{waste.user}}
+                <image ng-src="{{waste.userImage}}" class="img-responsive">
+            </td>    
+            
+            <td>
+                <strong>{{waste.date | date: 'MM/dd/yyyy hh:mm'}}</strong> <br>
+                <p>{{waste.content}}</p>
+                
+            </td>
+        </tr>
+        </table>
+    </div>
+</div>
